@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 import { Container, TextField, Button, Typography, Box } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 const LoginPage: FC = () => {
   const [email, setEmail] = useState('')
@@ -18,6 +19,11 @@ const LoginPage: FC = () => {
         <TextField label="Пароль" type="password" value={password} onChange={e => setPassword(e.target.value)} fullWidth />
         <Button variant="contained" onClick={handleLogin}>Войти</Button>
       </Box>
+
+      <Typography>
+        Нет аккаунта? <Link to="/register">Зарегистрируйтесь</Link>
+      </Typography>
+
     </Container>
   )
 }
